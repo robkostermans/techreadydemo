@@ -1,0 +1,42 @@
+a {
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+
+    &:after,&:before {
+        border-bottom: 1px solid darken($color-accent,10%);
+        bottom: 0;
+        content: "";
+        display: inline-block;
+        height: 2px;
+        left: 0;
+        position: absolute;
+        transition:all 0.15s ease-out;
+        width: 0;
+    }
+    &:before{
+        border-bottom-color:$color-accent;
+        border-bottom-style:dashed;
+        width:100%;
+    }
+
+    &:hover {
+        &:after {
+           width:100%;
+        }
+    }
+}
+
+.button {
+    background-color: $color-accent;
+    color: $color-text-light;
+    cursor: pointer;
+    display: inline-block;
+    padding: 0.5rem;
+
+    &:hover {
+        background-color: darken($color-accent,10%);
+    }
+}
+
+

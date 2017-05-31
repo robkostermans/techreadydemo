@@ -38,12 +38,13 @@ gulp.task('default', ['do-sass', 'do-critical', 'do-js', 'do-pug']);
 gulp.task('do-sass', function () {
     return gulp.src(settings.mainSrcSassFile)
         .pipe(sourcemaps.init())
-        .pipe(sass({ outputStyle: 'nested' }).on('error', function (err) { console.log(err); }))
+        .pipe(sass({ outputStyle: 'nested' }))//.on('error', function (err) { console.log(err); }))
         .pipe(autoprefixer())
         .pipe(gulp.dest(settings.buildCssTargetDirectory))
         .pipe(minify())
         .pipe(rename({ extname: '.min.css' }))
         .pipe(sourcemaps.write(""))
+        //.pipe(criticalCss())
         .pipe(gulp.dest(settings.buildCssTargetDirectory))
 });
 

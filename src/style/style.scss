@@ -1,13 +1,11 @@
+@import "_0-config.scss";
+@import "_1-readability.scss";
+@import "_2-addCool.scss";
+@import "_3-addAwesome.scss"; 
 @import "../components/card/_card.scss";
 
-body{
-    background-color:#f2f2f2;
-    margin:0;
-    overflow-y:scroll;
-    font-family:"Segoe UI";
-    font-weight:300;
+*{
+    transition:all 0.25s ease-in-out;
 }
 
-h1,h2,h3,h4,h5{
-    font-weight:300;
-}
+

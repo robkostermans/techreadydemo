@@ -1,0 +1,50 @@
+extends ../components/layout/_layout.pug
+
+block title
+    title #{title}
+
+block state
+    input(type="checkbox",id="calltoaction")
+
+block content
+    label Personeelszaken | verlof
+    h1 Verlof aanvragen
+
+    p Uw heeft ieder jaar recht op vakantie-uren en vakantiegeld. Daarnaast mag u gebruikmaken van verschillende soorten verlof, zoals zwangerschapsverlof, ouderschapsverlof en zorgverlof. Elk verlof heeft zijn eigen wettelijke regels waar u zich aan moeten houden.
+    label(for="calltoaction", class="button") Aanvraag indienen
+    p Volgens de wet heeft uw werknemer elk jaar recht op minimaal 4 keer het aantal uren dat hij per week werkt. Als iemand 32 uur per week werkt, heeft hij dus recht op 128 vakantie-uren per jaar. Dit zijn de wettelijke vakantie-uren. Als u met uw werknemers meer <a href="#">vakantie-uren</a> heeft afgesproken, dan zijn dat de zogenaamde bovenwettelijke vakantie-uren.
+    p Uw werknemer heeft ieder jaar wettelijk recht op vakantiegeld (ook wel vakantiebijslag of vakantietoeslag genoemd). Dit is minimaal 8% van het bruto jaarsalaris en kan alleen minder zijn als dat in uw cao staat.
+    p Als een werknemer zwanger is, heeft zij recht op zwangerschapsverlof en bevallingsverlof. Het totale verlof duurt minimaal 16 weken. Tijdens het zwangerschaps- en bevallingsverlof betaalt UWV het loon van uw werknemer.
+    h2 zwangerschap-, bevalling-, kraam- en ouderschapsverlof  
+    p De periode tot en met de bevalling is het zwangerschapsverlof. Uw werknemer mag kiezen of zij 6 of 4 weken voor de uitgerekende bevallingsdatum met verlof gaat. Kiest ze voor 4 weken, dan heeft ze nog 2 weken extra bevallingsverlof. Wordt de baby na de uitgerekende bevallingsdatum geboren, dan wordt de tijd tussen de uitgerekende datum en de bevalling bij het zwangerschapsverlof geteld. Dit verlof kan daardoor langer duren dan 6 weken. Het totale verlof kan daardoor samen meer dan 16 weken kan zijn.
+    p Uw werknemer heeft recht op 2 dagen betaald kraamverlof als zijn of haar echtgenote of partner is bevallen. Voor de bevalling zelf kan uw werknemer calamiteitenverlof opnemen. Uw werknemer mag daarnaast 3 dagen ouderschapsverlof opnemen. Dit is onbetaald verlof, tenzij het anders is afgesproken in de arbeidsovereenkomst of in de cao.
+    p Om meer tijd te besteden aan de zorg voor de kinderen, mag uw werknemer ouderschapsverlof opnemen.
+    
+    a(name="aanvraagformulier")
+    form 
+        fieldset
+            h2 Aanvraagformulier
+            p Gebruik het formulier om je verlof aan te vragen. 
+            p
+                label Soort
+                select
+                    option Verlof/vakantie
+                    option Zwangerschapsverlof
+                    option Ouderschapsverlof
+                    option Zorgverlof
+            p
+                label van
+                input(type="datetime-local")
+            p
+                label tot
+                input(type="datetime-local")
+            p
+                label Aantal uur
+                input(type="number",value=0)
+            p
+                label Bijzonderheden
+                textarea
+            p
+                button Verzoek versturen
+
+    
