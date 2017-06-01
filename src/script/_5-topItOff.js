@@ -23,8 +23,9 @@ document.addEventListener('keydown', function (event) {
     }
 });
 
-//ES6: multiline String
-var roadPoem = `Then took the other, as just as fair,
+//ES6: multiline String en template literals #{}
+var partOfPoem = "as just as fair";
+var roadPoem = `Then took the other, ${partOfPoem},
     And having perhaps the better claim
     Because it was grassy and wanted wear,
     Though as for that the passing there
@@ -34,5 +35,5 @@ var roadPoem = `Then took the other, as just as fair,
 var wait1000 = new Promise((resolve, reject) => {
     setTimeout(resolve, 1000)
 }).then(() => {
-    console.log('Yay!')
+    console.log(roadPoem)
 })

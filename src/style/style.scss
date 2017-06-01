@@ -2,12 +2,18 @@
 .question__selector {display: none;}
 #calltoaction {display: none;}
 .accordian__item{display:none;}
+*{ transition:all 0.25s;}
 
-*{
-    transition:all 0.25s;
-}
+/*
+    BAKING THE MAGICAL UNICORN
+    
+    keywords: gulp, sass-config (color palette), to framework or not?, 
+    autoprefixer, sourcemaps
+*/
+
 @import "_0-config.scss";
-@import "_1-applyCoating.scss";
-@import "_2-addCool.scss";
-@import "_3-addAwesome.scss"; 
-@import "_4-sprinkleMagic.scss"; 
+//@import "_1-applyCoating.scss";
+//@import "_2-addCool.scss";
+//@import "_3-addAwesome.scss"; 
+//@import "_4-sprinkleMagic.scss"; 
+// _5-topItOff.js
