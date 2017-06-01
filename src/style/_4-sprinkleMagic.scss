@@ -1,33 +1,21 @@
 @import "_0-config.scss";
-////JSUT FOR DEV
 /*
-form {
-    opacity: 1;
-}
+    4. SPRINKLE SOME MAGIC
 
-#calltoaction {
-    opacity: 1;
-    width: 100%;
+    keywords: conversational UI
 
-    &:after {
-        background: rgba($color-neutral-dark,0.78);
-        content: "";
-        display: block;
-        height: 100vh;
-        left: 0;
-        position: absolute;
-        top: 0;
-        width: 100vw;
-    }
-}*/
-////JUST FOR DEV
+*/
 
-form {
+.requestform {
     background-color: transparent;
     max-width: 80%;
 
     h2, p {
         display: none;
+    }
+
+    input{
+        width:auto;
     }
 }
 
@@ -39,7 +27,6 @@ form {
 }
 
 .question {
-    //height: 20rem;
     max-height: 0;
     max-width: 0;
     opacity: .3;
@@ -71,7 +58,7 @@ form {
 
     &__selector {
         cursor: pointer;
-        display: block !important;
+        display: inline !important;
         height: 2rem;
         margin-top: 1rem;
         order: 100;
@@ -131,11 +118,6 @@ form {
             }
         }
 
-        &textarea {
-            //width: 100%;
-        }
-        &select{
-        }
     }
 
    
@@ -148,15 +130,11 @@ form {
     }
 }
 
-xselect.question__answer {
-    height: 5rem;
-    background:transparent;
-    border:0;
-    border-bottom:1px solid $color-text-light;
-    color:$color-text-light;
-    option{
-        height:1rem;
-        color:$color-neutral-dark;
+select.question__answer {
+
+    option {
+        height: 1rem;
+        color: $color-neutral-dark;
     }
 }
 
@@ -165,4 +143,5 @@ textarea.question__answer, select.question__answer, input.question__answer {
     border: 0;
     border-bottom: 1px solid $color-text-light;
     color: $color-text-light;
+    font-size:2rem;
 }

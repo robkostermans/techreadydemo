@@ -1,3 +1,11 @@
+@import "_0-config.scss";
+/*
+    2. ADD THE COOL
+
+    keywords: focus on content and CTA, advanced ui elements, simple transitions,
+
+
+*/
 a {
     display: inline-block;
     position: relative;
@@ -48,19 +56,45 @@ form h2{
 
 
 .accordian {
-    &__item{
-        + h2{
+    &__item {
+        display: none;
 
+        + h2 {
+            label {
+                cursor: pointer;
+
+                &:before {
+                    content: "\005e";
+                    color:$color-accent;
+                    display: inline-block;
+                    margin-right:0.5rem;
+                    transform: rotate(90deg);
+                    transition: all 0.25s;
+                }
+            }
         }
-        + h2 + p{
-            overflow:hidden;
-            height:100%;
-            max-height:0;
-            transition:all 0.25s;
+
+        + h2 + p {
+            border-bottom: 1px solid $color-neutral-dark;
+            display: block;
+            height: 100%;
+            padding-bottom: 0rem;
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: all 0.25s;
         }
-        &:checked{
-            + h2 + p{
-                max-height:100%;
+
+        &:checked {
+            + h2 + p {
+                border-bottom-color: $color-accent;
+                max-height: 500px;
+                opacity: 1;
+                padding-bottom: 2rem;
+            }
+
+            + h2 label:before {
+                transform: rotate(180deg);
             }
         }
     }

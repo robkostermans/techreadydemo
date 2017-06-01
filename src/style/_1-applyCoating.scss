@@ -1,5 +1,25 @@
 @import "_0-config.scss";
 
+/*
+    1. APPLY COATING
+
+    keywords: colors, font sizes, spacing, line width, BEM, ALPBETICAL
+
+*/
+
+/*
+    BEM = naming convention
+    .block {}
+    .block__element {}
+    .block--modifier {}
+
+     .person {}
+    .person__hand {}
+    .person--female {}
+    .person--female__hand {}
+    .person__hand--left {}
+*/
+
 html {
     font-size: 18px;
 }
@@ -52,6 +72,12 @@ button{
     padding:0.5rem;
     cursor:pointer;
 }
+nav{
+    span{
+        padding:1rem;
+    }
+}
+
 
 a{
     color:$color-accent;
@@ -66,7 +92,7 @@ main {
     padding:1rem 2rem;
 }
 
-form{
+.requestform{
     fieldset{
 
         border-color:$color-neutral-light;

@@ -1,12 +1,13 @@
 .button[for="calltoaction"] {display: none;}
 .question__selector {display: none;}
 #calltoaction {display: none;}
+.accordian__item{display:none;}
 
-
+*{
+    transition:all 0.25s;
+}
 @import "_0-config.scss";
-@import "_1-readability.scss";
+@import "_1-applyCoating.scss";
 @import "_2-addCool.scss";
-//@import "_3-addAwesome.scss"; 
-//@import "_4-sprinkleMagic.scss"; 
-
-//@import "../components/card/_card.scss";
+@import "_3-addAwesome.scss"; 
+@import "_4-sprinkleMagic.scss"; 
