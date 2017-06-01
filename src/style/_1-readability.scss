@@ -67,6 +67,12 @@ main {
 }
 
 form{
+    fieldset{
+
+        border-color:$color-neutral-light;
+        margin-top:2rem;
+        h2{margin-top:0;}
+    }
     label{
         display:inline-block;
         width:20%;

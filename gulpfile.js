@@ -14,6 +14,7 @@ var babel = require('gulp-babel');
 var criticalCss = require('gulp-critical-css');
 var data = require('gulp-data');
 var fs = require('fs');
+var cssShorthand = require('gulp-shorthand');
 
 var settings = {
     watchForSassFiles: "src/**/*.scss",
@@ -40,11 +41,13 @@ gulp.task('do-sass', function () {
         .pipe(sourcemaps.init())
         .pipe(sass({ outputStyle: 'nested' }))//.on('error', function (err) { console.log(err); }))
         .pipe(autoprefixer())
+        .pipe(cssShorthand())
         .pipe(gulp.dest(settings.buildCssTargetDirectory))
         .pipe(minify())
         .pipe(rename({ extname: '.min.css' }))
         .pipe(sourcemaps.write(""))
         //.pipe(criticalCss())
+
         .pipe(gulp.dest(settings.buildCssTargetDirectory))
 });
 
