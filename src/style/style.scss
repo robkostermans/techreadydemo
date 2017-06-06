@@ -4,6 +4,8 @@
 .accordian__item{display:none;}
 *{ transition:all 0.25s;}
 
+
+
 /*
     BAKING THE MAGICAL UNICORN
     
@@ -12,8 +14,37 @@
 */
 
 @import "_0-config.scss";
-//@import "_1-applyCoating.scss";
-//@import "_2-addCool.scss";
-//@import "_3-addAwesome.scss"; 
-//@import "_4-sprinkleMagic.scss"; 
+@import "_1-applyCoating.scss";
+@import "_2-addCool.scss";
+@import "_3-addAwesome.scss"; 
+@import "_4-sprinkleMagic.scss"; 
 // _5-topItOff.js
+
+
+
+/*
+   ADD SOME DEMO goodness
+*/
+nav.recipe {
+    position: fixed;
+    padding: 1rem;
+    top: 0;
+    right: 2rem;
+    background: $color-accent;
+    &:before{
+        content:"Demo recipe ";
+        color:$color-text-light;
+    }
+    &:after{
+        content:"demo works only on chrome";
+        display:block;
+        font-style:italic;
+        color:$color-text-light;
+        font-size:.85rem;
+    }
+    input{
+        cursor:pointer;
+        padding:1rem;
+    }
+
+}

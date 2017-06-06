@@ -5,8 +5,12 @@ html
             title #{title}
         link(rel="stylesheet",media="all",href="style/style.min.css")
     body
-        nav 
-            block nav
+        nav(class="recipe") 
+            input(type="checkbox",id="stage0", class="recipe__step",data-step="0",checked)
+            input(type="checkbox",id="stage1", class="recipe__step",data-step="1")
+            input(type="checkbox",id="stage2", class="recipe__step",data-step="2")
+            input(type="checkbox",id="stage3", class="recipe__step",data-step="3")
+            input(type="checkbox",id="stage4", class="recipe__step",data-step="4")
         block state
         main(id="card",class="card")
             block content

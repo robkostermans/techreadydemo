@@ -1,9 +1,27 @@
 /*
     6. TOP IT OFF
 
-    keywords: vanillaJS, ES6, polyfiil/shim vs Babel
+    keywords: vanillaJS, ES6, polyfill/shim vs Babel
 */
 
+// RECIPE
+var steps = document.querySelectorAll("input.recipe__step");
+for (i = 0; i < steps.length; i++) {
+    steps[i].addEventListener('change', function (event) {
+        var selectedStep = this.getAttribute("data-step");
+        if (this.checked)
+            this.checked = false;
+        for (a = 0; a <= steps.length; a++){
+            if (a <= selectedStep){
+                document.getElementById("stage" + a).checked = true;
+                document.body.classList.add("step" + a)
+            } else {
+                document.getElementById("stage" + a).checked = false;
+                document.body.classList.remove("step" + a)
+            }
+        }
+    });
+};
 
 //esc closes dialog
 document.addEventListener('keydown', function (event) {

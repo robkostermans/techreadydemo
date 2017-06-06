@@ -5,143 +5,150 @@
     keywords: conversational UI
 
 */
+body.step4 {
+    .requestform {
+        background-color: transparent;
+        max-width: 80%;
 
-.requestform {
-    background-color: transparent;
-    max-width: 80%;
+        h2, p {
+            display: none;
+        }
 
-    h2, p {
-        display: none;
+        input {
+            width: auto;
+
+            &[type='datetime-local'], &[type='number'] {
+                width: 100%;
+            }
+        }
     }
 
-    input{
-        width:auto;
+    .questions {
+        display: flex;
+        flex: 0 1 auto;
+        flex-direction: row;
+        flex-wrap: wrap;
     }
-}
 
-.questions {
-    display: flex;
-    flex: 0 1 auto;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
+    .question {
+        max-height: 0;
+        max-width: 0;
+        opacity: .3;
+        overflow: hidden;
+        transition: opacity 0.25s;
+        width: 100%;
 
-.question {
-    max-height: 0;
-    max-width: 0;
-    opacity: .3;
-    overflow: hidden;
-    transition: opacity 0.25s;
 
-    .question__selector:checked + & {
+        label {
+            color: $color-text-light;
+            display: block;
+            font-size: 0;
+            line-height: 0;
+            width: 100%;
+
+            &:after {
+                content: attr(data-moreInformation);
+                display: block;
+                font-size: 3rem;
+                font-weight: 500;
+                line-height: 1em;
+                width: 100%;
+            }
+        }
+
+        &__selector {
+            cursor: pointer;
+            display: inline !important;
+            height: 2rem;
+            margin-top: 1rem;
+            order: 100;
+            width: 2rem;
+
+            &:checked {
+                height: 0;
+                width: 0;
+                margin: 0;
+
+                &:last-of-type {
+                    display: none;
+                }
+
+                ~ .question__selector {
+                    opacity: 0;
+                    margin: 0;
+                }
+
+                + .question + .question__selector {
+                    opacity: 1;
+                    height: 0;
+
+                    &:before {
+                        background: $color-accent;
+                        content: "volgende vraag";
+                        color: $color-text-light;
+                        display: inline-block;
+                        line-height: 1;
+                        margin-top: 1rem;
+                        position: absolute;
+                        padding: .5rem;
+                        right: 1rem;
+                        white-space: nowrap;
+                        z-index: 9000;
+                    }
+
+                    background: red;
+                }
+            }
+        }
+
+        &__answer {
+            width: 100%;
+
+
+
+            &--text {
+                color: $color-text-light;
+
+                div {
+                    margin-bottom: 1rem;
+                    font-size: 2rem;
+                    line-height: 1.2em;
+                }
+            }
+        }
+
+
+
+        &__send {
+            margin-top: .8rem;
+            position: absolute;
+            right: 1rem;
+        }
+    }
+
+    .question__selector:checked + .question {
         opacity: 1;
         max-height: 100%;
         max-width: 100%;
     }
 
-    label {
+    .question__selector:checked + .question select.question__answer {
+        margin-top: 2rem;
+    }
+
+    select.question__answer {
+
+        option {
+            height: 1rem;
+            color: $color-neutral-dark;
+        }
+    }
+
+    textarea.question__answer, select.question__answer, input.question__answer {
+        background: transparent;
+        border: 0;
+        border-bottom: 1px solid $color-text-light;
         color: $color-text-light;
-        display: block;
-        font-size: 0;
-        line-height: 0;
-        width: 100%;
-
-        &:after {
-            content: attr(data-moreInformation);
-            display: block;
-            font-size: 3rem;
-            font-weight: 500;
-            line-height: 1em;
-            width: 100%;
-        }
+        font-size: 2rem;
     }
-
-    &__selector {
-        cursor: pointer;
-        display: inline !important;
-        height: 2rem;
-        margin-top: 1rem;
-        order: 100;
-        width: 2rem;
-
-        &:checked {
-            height: 0;
-            width: 0;
-            margin: 0;
-
-            &:last-of-type {
-                display: none;
-            }
-
-            ~ .question__selector {
-                opacity: 0;
-                margin: 0;
-            }
-
-            + .question + .question__selector {
-                opacity: 1;
-                height: 0;
-
-                &:before {
-                    background: $color-accent;
-                    content: "volgende vraag";
-                    color: $color-text-light;
-                    display: inline-block;
-                    line-height: 1;
-                    margin-top: 1rem;
-                    position: absolute;
-                    padding: .5rem;
-                    right: 1rem;
-                    white-space: nowrap;
-                    z-index: 9000;
-                }
-
-                background: red;
-            }
-        }
-    }
-
-    &__answer {
-        width: 100%;
-
-        .question__selector:checked + .question & {
-            margin-top: 2rem;
-        }
-
-        &--text {
-            color: $color-text-light;
-
-            div {
-                margin-bottom: 1rem;
-                font-size: 2rem;
-                line-height: 1.2em;
-            }
-        }
-
-    }
-
-   
-
-    &__send {
-        margin-top:.8rem;
-        position:absolute;
-        right:1rem;
-
-    }
-}
-
-select.question__answer {
-
-    option {
-        height: 1rem;
-        color: $color-neutral-dark;
-    }
-}
-
-textarea.question__answer, select.question__answer, input.question__answer {
-    background: transparent;
-    border: 0;
-    border-bottom: 1px solid $color-text-light;
-    color: $color-text-light;
-    font-size:2rem;
 }
